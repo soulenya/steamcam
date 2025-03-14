@@ -1,0 +1,23 @@
+[Unit]
+Description=CameraPi4 Streaming Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+ExecStartPre=/bin/mkdir -p /home/pi/steamcam/logs
+ExecStartPre=/bin/chown -R pi:pi /home/pi/steamcam/logs
+ExecStart=/home/pi/steamcam/camera_stream.sh
+# Only restart if it wasn't stopped intentionally
+Restart=on-failure
+RestartSec=30
+# Create a flag file when explicitly stopped
+ExecStop=/bin/bash -c "/bin/touch /tmp/stream_stopped_intentionally || true"
+# Add a timeout to ensure service stops properly
+TimeoutStopSec=10
+StandardOutput=append:/home/pi/steamcam/logs/service.log
+StandardError=append:/home/pi/steamcam/logs/service_error.log
+
+[Install]
+WantedBy=multi-user.target

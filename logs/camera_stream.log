@@ -1,0 +1,14 @@
+Starting IMX708 stream with built-in audio at Fri 14 Mar 15:57:05 EDT 2025
+Stopping any existing camera processes...
+Stream attempt 1/5 at Fri 14 Mar 15:57:07 EDT 2025
+Starting libcamera-vid at 720p/30fps with rotation...
+Camera process started with PID: 1053
+Camera ready, starting FFmpeg with ICS43434 audio...
+Guessed Channel Layout for Input Stream #1.0 : stereo
+[alsa @ 0x55673f0410] ALSA buffer xrun.
+[alsa @ 0x55673f0410] Thread message queue blocking; consider raising the thread_queue_size option (current value: 2048)
+[alsa @ 0x55673f0410] ALSA buffer xrun.
+FFmpeg exited with status: 137
+Stream was stopped intentionally via control script
+Stream ended normally at Fri 14 Mar 15:59:09 EDT 2025
+Performing cleanup...
